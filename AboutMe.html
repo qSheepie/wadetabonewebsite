@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Me</title>
+  <link rel="stylesheet" href="mystyles.css" />
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css" />
+</head>
+
+<body>
+  <header>
+    <h1>Here's a little info about me!</h1>
+    <header>
+
+      <div class="flex-container">
+        <nav>
+          <a href="Home.html">Home</a> | <a href="AboutMe.html">About Me</a> |
+          <a href="Portfolio.html">Portfolio</a> |
+          <a href="Contact.html">Contact</a>
+        </nav>
+      </div>
+
+      <div class="b-container">
+        <h3>
+          In my free time, I love diving into coding projects, whether it's
+          building a new website or tinkering with small programming
+          challenges.<br /><br />
+          It's always exciting to see an idea come to life through code. When I'm
+          not coding, you'll likely find me gaming, or teaming up with friends for
+          some multiplayer fun. There's something about the mix of strategy and
+          competition that makes gaming a perfect way to unwind.
+        </h3>
+      </div>
+
+      <div class="b-container">
+        <h3>
+          I’m always up for learning something new and believe in the value of
+          personal growth and self-improvement. I also enjoy spending time with
+          friends and family, whether it’s a casual hangout, a deep conversation,
+          or just sharing laughs over a cup of coffee. Life’s all about finding
+          those moments that make you feel alive, and I’m always looking to enjoy
+          every bit of it! And of course, spending time with friends, whether in
+          person or online, is the perfect way to balance out all my tech-driven
+          hobbies.
+        </h3>
+      </div>
+
+      <div class="b-container">
+        <button id="surpriseButton">Surprise Me!</button>
+        <p id="funFact"></p>
+      </div>
+      <p><a href="https://cdnjs.com/libraries/magnific-popup.js">Click here to view the Maginific Popup website</a></p>
+
+      <div class="row">
+        <div class="column">
+          <a href="gaming.jpg" class="gallery">
+            <img src="gaming.jpg" alt="A picture of me playing a game" width="400px">
+          </a>
+        </div>
+        <div class="column">
+          <a href="friends.jpg" class="gallery">
+            <img src="friends.jpg" alt="A picture of me and my friends" width="450px">
+          </a>
+        </div>
+        <div class="column">
+          <a href="website2.jpg" class="gallery">
+            <img src="website2.jpg" alt="A picture of my coding" width="400px">
+          </a>
+        </div>
+      </div>
+
+      <script>
+        document.getElementById("surpriseButton").onclick = function () {
+          let randomNumber = Math.floor(Math.random() * 5) + 1;
+          let funFact = "";
+          if (randomNumber === 1) {
+            funFact = "I once built a website just for fun in a weekend!";
+          } else if (randomNumber === 2) {
+            funFact = "I'm a huge fan of multiplayer strategy games!";
+          } else if (randomNumber === 3) {
+            funFact = "I love experimenting with new programming languages and frameworks.";
+          } else if (randomNumber === 4) {
+            funFact = "When I’m not coding, I enjoy playing chess with friends.";
+          } else {
+            funFact = "I believe that every day is a learning opportunity.";
+          }
+          document.getElementById("funFact").textContent = funFact;
+        };
+
+        $(document).ready(function () {
+          $('.gallery').magnificPopup({
+            type: 'image',
+            gallery: {
+              enabled: true
+            }
+          });
+        });
+      </script>
+</body>
+
+</html>

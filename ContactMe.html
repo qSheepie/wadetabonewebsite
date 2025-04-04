@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="mystyles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Fill in the form to contact us!</h1>
+        <header>
+
+            <div class="flex-container">
+                <nav>
+                    <a href="Home.html">Home</a> |
+                    <a href="AboutMe.html">About Me</a> |
+                    <a href="Portfolio.html">Portfolio</a> |
+                    <a href="ContactMe.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="contact-form">
+                <h2>Contact Me</h2>
+                <form id="contactForm">
+                    <input type="text" id="name" placeholder="Your Name"><br>
+                    <span id="name-error" style="color: red; display: none;">Name is required.</span><br>
+
+                    <input type="email" id="email" placeholder="Your Email"><br>
+                    <span id="email-error" style="color: red; display: none;">Please enter a valid email.</span><br>
+
+                    <input type="text" id="contact" placeholder="+356 #### ####"><br>
+                    <span id="contact-error" style="color: red; display: none;">Please enter a valid contact
+                        number.</span><br>
+
+                    <textarea id="message" placeholder="Your Message (Min 10 characters)"></textarea><br>
+                    <span id="message-error" style="color: red; display: none;">Message must be at least 10
+                        characters.</span><br>
+
+                    <button type="submit">Send</button>
+                </form>
+            </div>
+
+            <script>
+                $(document).ready(function () {
+                    $("#contactForm").submit(function (event) {
+                        event.preventDefault();
+
+                        $("#name-error, #email-error, #contact-error, #message-error").hide();
+
+                        let name = $("#name").val().trim();
+                        let email = $("#email").val().trim();
+                        let contact = $("#contact").val().trim();
+                        let message = $("#message").val().trim();
+                        let contactPattern = /^\+356\s\d{4}\s\d{4}$/;
+
+                        let valid = true;
+
+                        if (!name) {
+                            $("#name-error").show();
+                            valid = false;
+                        }
+
+                        if (!email || !email.includes("@")) {
+                            $("#email-error").show();
+                            valid = false;
+                        }
+
+                        if (!contactPattern.test(contact)) {
+                            $("#contact-error").show();
+                            valid = false;
+                        }
+
+                        if (message.length < 10) {
+                            $("#message-error").show();
+                            valid = false;
+                        }
+
+
+                        if (valid) {
+                            alert("Thank you! Your message has been sent.");
+                            this.reset();
+                        }
+                    });
+                });
+            </script>
+</body>
+
+</html>

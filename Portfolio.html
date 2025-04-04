@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="mystyles.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1 style="color: rgb(0, 0, 0);">This is my portfolio!</h1>
+        <header>
+
+            <div class="flex-container">
+                <nav>
+                    <a href="Home.html">Home</a> |
+                    <a href="AboutMe.html">About Me</a> |
+                    <a href="Portfolio.html">Portfolio</a> |
+                    <a href="Contact.html">Contact</a>
+                </nav>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <img src="website.jpg" alt="A picture of me playing a game" width="400px">
+                    <button class="view-more-btn" onclick="toggleDetails('image1')">View More</button>
+                    <div id="image1" class="hidden extra-info">
+                        <p>Platform featuring bold visuals, fast load times, and a streamlined checkout process.</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <img src="website3.jpg" alt="A picture of my friends" width="450px">
+                    <button class="view-more-btn" onclick="toggleDetails('image2')">View More</button>
+                    <div id="image2" class="hidden extra-info">
+                        <p>Clean, modern website design with intuitive navigation and a responsive layout for seamless
+                            user
+                            experience.</p>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <img src="website2.jpg" alt="A picture of my coding" width="400px">
+                    <button class="view-more-btn" onclick="toggleDetails('image3')">View More</button>
+                    <div id="image3" class="hidden extra-info">
+                        <p>Site showcasing creative work with dynamic animations and a sleek, minimalist aesthetic.</p>
+                    </div>
+                </div>
+            </div>
+
+            <script>
+                function toggleDetails(id) {
+                    const el = document.getElementById(id);
+                    el.classList.toggle('hidden');
+                }
+            </script>
+</body>
+
+</html>
